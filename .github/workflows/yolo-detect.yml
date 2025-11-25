@@ -26,11 +26,11 @@ jobs:
       with:
         fetch-depth: 1000
         fetch-tags: true
-
-    - name: Fix ONNX version compatibility
+        
+    - name: Fix ONNX version (pt2onnx)
       run: |
         pip uninstall -y onnx
-        pip install onnx==1.13.1
+        pip install onnx==1.6.1 onnxsim
     
     - name: Run build script
       run: |
@@ -70,6 +70,11 @@ jobs:
       with:
         name: onnx_artifacts
         path: onnx_artifacts
+        
+    - name: Fix ONNX version (onnx2rknn)
+      run: |
+        pip uninstall -y onnx
+        pip install onnx==1.6.1
 
     - name: Run build script
       run: |
