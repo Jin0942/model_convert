@@ -30,7 +30,7 @@ jobs:
     - name: Fix ONNX version (pt2onnx)
       run: |
         pip uninstall -y onnx
-        pip install onnx==1.6.1 onnxsim
+        pip install onnx==1.6.0 onnxsim
     
     - name: Run build script
       run: |
@@ -74,7 +74,7 @@ jobs:
     - name: Fix ONNX version (onnx2rknn)
       run: |
         pip uninstall -y onnx
-        pip install onnx==1.6.1
+        pip install onnx==1.6.0
 
     - name: Run build script
       run: |
