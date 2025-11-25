@@ -27,6 +27,11 @@ jobs:
         fetch-depth: 1000
         fetch-tags: true
 
+    - name: Fix ONNX version compatibility
+      run: |
+        pip uninstall -y onnx
+        pip install onnx==1.13.1
+    
     - name: Run build script
       run: |
         apt-get update && apt install -y --no-install-recommends wget
